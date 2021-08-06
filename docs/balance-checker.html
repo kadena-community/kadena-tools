@@ -58,7 +58,7 @@
       }
       catch(e){
         console.log(e)
-        attachCell("h3", "Unable to fetch from " + JSON.stringify(server), "total", `total-value`)
+        attachCell("h1", "Unable to fetch from " + JSON.stringify(server), "total", `total-value`)
       }
     }
 
@@ -143,12 +143,26 @@
       if (localStorage.getItem("kadena-account")){
         document.getElementById("account").value = localStorage.getItem("kadena-account");
       }
+
+      let search = window.location.href;
+      let params = new URLSearchParams(search);
+      if (params.get("account")) document.getElementById("account").value = params.get("account");
+      if (params.get("token")) document.getElementById("token").value = params.get("token");
+      if (params.get("version")) {
+        if (params.get("version") === "mainnet01") document.getElementById("server").value = "api.chainweb.com";
+        else if (params.get("version") === "testnet04")  document.getElementById("server").value = "api.testnet.chainweb.com";
+      }
+      if (params.get("account") && params.get("version")) onClick();
     }, false);
 
     document.addEventListener('click', async function (event) {
       chainBal = {}
       if (!event.target.matches('#balance')) return;
       event.preventDefault();
+      onClick();
+    }, false);
+
+    async function onClick() {
       const server = document.getElementById('server').value;
       const token = document.getElementById('token').value;
       const info = await getVersion(server);
@@ -174,6 +188,13 @@
           getBalance(host,token,acctName,id)
         });
       }
+    }
+
+    document.addEventListener('click', async function (event) {
+      chainBal = {}
+      if (!event.target.matches('#balance')) return;
+      event.preventDefault();
+      onClick();
     }, false);
 
     function download(data, filename, type) {
@@ -280,10 +301,8 @@
               <label>Your Account Name</label>
               <input type="text" id="account" placeholder="Enter Account Name or Public Key" 
               onkeydown = "if (event.keyCode == 13) document.getElementById('balance').click()">
-              <div id="acct-err" class="ui center error message">
-              </div>
+              <div class="info-text">Account name is at least 3 characters</div>
             </div>
-            <div class="info-text">Account name is at least 3 characters</div>
           </form>
 
           <div class="container">
