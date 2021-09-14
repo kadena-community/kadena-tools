@@ -391,7 +391,7 @@
                      proof = await res.json();
                    }
                  }
-                 const m = Pact.lang.mkMeta("free-x-chain-gas", targetChainId, 0.000000000001, 300, createTime(), 28800);
+                 const m = Pact.lang.mkMeta("free-x-chain-gas", targetChainId, 0.000000000001, 400, createTime(), 28800);
                  const contCmd = {type: "cont", keyPairs:[],pactId: pactId, rollback: false, step: 1, meta: m, proof: proof, networkId: networkId}
                  const cmd = Pact.simple.cont.createCommand( contCmd.keyPairs, contCmd.nonce, contCmd.step, contCmd.pactId,
                                                           contCmd.rollback, contCmd.envData, contCmd.meta, contCmd.proof, contCmd.networkId);
@@ -841,7 +841,7 @@
         <div class="container">
           <!--<div id="subhead">
              <a class="headlink" href="cross-chain.html" >Cross Chain Transfer</span>
-            <span class="headlink current" >Coin Transfer</span> 
+            <span class="headlink current" >Coin Transfer</span>
           </div>-->
         </div>
         <div class="container-right">
@@ -862,7 +862,7 @@
             </a>
             <a class="headlinkSite" href="balance-checker.html">
               <div>Balance Checker</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>           
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
              </a>
             <a class="headlinkSite" href="code-viewer.html">
               <div>Code Viewer</div>
@@ -870,7 +870,7 @@
             </a>
             <a class="headlinkSite" id="gen-button" >
               <div id="gen-button">Generate KeyPair</div>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>         
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>
             </a>
           </span>
         </div>
@@ -888,7 +888,7 @@
         </div>
       </div>
       <div class="container">
-       
+
             <form id ="kadena-form" class="ui form" autocomplete="off">
               <div class="field">
                 <label>Network</label>
@@ -994,7 +994,7 @@
                     <!-- <a class="item" id="upload">
                       Upload
                     </a> -->
-                  </div>  
+                  </div>
                 </div>
                 <div class="ui segment" id="keyset">
                   <div id="basic-input" class="field">
