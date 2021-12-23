@@ -2,7 +2,8 @@
 <head>
     <title>Kadena Transfer Tool</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="https://explorer.chainweb.com/static/img/favicon/0d63dkd822sxczcy51lbhqgflzdxw6lhgf88x2j7kc55hcpk120y-favicon-96x96.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pact-lang-api@4.1.2/pact-lang-api-global.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -125,7 +126,7 @@
               </button>
             </a>
 
-            <button id="gen-button" class="button download">
+            <button id="gen-button" class="button">
               Generate KeyPair
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>     
             </button>
@@ -145,13 +146,13 @@
     gap: 1rem;
     font-size: 1.2rem;
   }
-  .download {
+  #gen-button {
     background-color: #00000044;
   }
-  .download:hover {
+  #gen-button:hover {
     background-color: #00000063;
   }
-  .download:active {
+  #gen-button:active {
     background-color: #0000002d;
   }
 </style>
