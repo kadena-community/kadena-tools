@@ -20,7 +20,6 @@ body {
   right: -12rem;
   transform: rotate(60deg);
   opacity: 0.1;
-
 }
 
 .nav {
@@ -43,11 +42,11 @@ body {
   border-radius: 1rem;
   backdrop-filter: blur(5px);
 }
-.subheadButton:hover{
+.subheadButton:hover {
   background-color: #29292991 !important;
   cursor: pointer;
 }
-.subheadButton:active{
+.subheadButton:active {
   background-color: #a7a7a752 !important;
 }
 
@@ -64,14 +63,14 @@ body {
   align-items: center;
   gap: 1rem;
   user-select: none;
-
 }
 
 .headlinkContainer {
   min-width: 196px;
   max-height: 350px;
   overflow: auto;
-  box-shadow: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px, rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
+  box-shadow: rgb(0 0 0 / 1%) 0px 0px 1px, rgb(0 0 0 / 4%) 0px 4px 8px,
+    rgb(0 0 0 / 4%) 0px 16px 24px, rgb(0 0 0 / 1%) 0px 24px 32px;
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
@@ -81,19 +80,18 @@ body {
   z-index: 100;
   right: 1.5rem;
   border: 1px solid #3333337d;
-    border-radius: 1rem;
-    background-color: #0e0e0e91;
-    backdrop-filter: blur(5px);
+  border-radius: 1rem;
+  background-color: #0e0e0e91;
+  backdrop-filter: blur(5px);
 }
 
-
 @media screen and (max-width: 1325px) {
-  .headlinkContainer{
+  .headlinkContainer {
     top: 6.5rem;
   }
 }
 @media screen and (max-width: 864px) {
-  .headlinkContainer{
+  .headlinkContainer {
     top: 8rem;
   }
 }
@@ -101,14 +99,14 @@ body {
 .headlinkSite {
   display: flex;
   gap: 1rem;
-    flex: 1 1 0%;
-    flex-direction: row;
-    -webkit-box-align: center;
-    align-items: center;
-    padding: 0.5rem;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    color: rgb(195, 197, 203);
+  flex: 1 1 0%;
+  flex-direction: row;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0.5rem;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  color: rgb(195, 197, 203);
 }
 
 #gen-button {
@@ -137,7 +135,6 @@ h1,
   display: grid;
   place-content: center;
 }
-
 
 .form {
   display: grid;
@@ -174,6 +171,15 @@ label {
   color: #aeaeae;
 }
 
+.share-text {
+  font-size: 0.8rem;
+  color: #aeaeae;
+  cursor: pointer;
+}
+.share-text:hover{
+  color: #ffffff;
+}
+
 .info-text {
   font-size: 0.8rem;
   color: #aeaeae;
@@ -200,16 +206,16 @@ label {
   grid-area: 1 / 1 / 2 / 2;
   display: grid;
 }
-#token-field, #chain-field {
+#token-field,
+#chain-field {
   grid-area: 1 / 2 / 2 / 3;
   display: grid;
 }
-#account-field, #module-field {
+#account-field,
+#module-field {
   grid-area: 2 / 1 / 3 / 3;
   display: grid;
 }
-
-
 
 .result-container {
   display: grid;
@@ -237,12 +243,12 @@ label {
 }
 
 #accname {
-  max-width: 22rem; 
+  max-width: 22rem;
   overflow-wrap: anywhere;
 }
 
 #total-value {
-font-size: 2rem;
+  font-size: 2rem;
 }
 
 .result {
@@ -255,7 +261,6 @@ h4 {
   margin: 1rem;
 }
 
-
 .check-button {
   margin-top: 15px;
 }
@@ -264,6 +269,7 @@ table#data-table {
   margin-left: auto;
   margin-right: auto;
   margin: 0rem 1rem 0rem 1rem;
+  min-width: 31rem;
 }
 
 table#data-table th {
@@ -284,7 +290,7 @@ tbody tr {
   height: 2.8rem;
 }
 
-table td:nth-child(2)  {
+table td:nth-child(2) {
   color: #9b9b9b;
   overflow-wrap: anywhere;
 }
@@ -310,46 +316,43 @@ span.headlink {
 }
 
 ::-webkit-scrollbar-track {
-background-color: rgb(19, 19, 19);
+  background-color: rgb(19, 19, 19);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgb(59, 59, 59); 
+  background: rgb(59, 59, 59);
   border-radius: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(124, 124, 124); 
+  background: rgb(124, 124, 124);
 }
 
- ::-moz-selection { 
+::-moz-selection {
   color: #000000;
   background: #ff00bbc4;
-} 
+}
 ::selection {
   color: #000000;
   background: #ff00bbc4;
 }
 
-
 #chain {
-    border: 1px solid #3333337d;
-    border-radius: 1rem;
-    font-size: 16px;
-    background-color: #0e0e0e91;
-    padding: 1rem;
-    color: white;
-    outline: none;
-    backdrop-filter: blur(5px);
+  border: 1px solid #3333337d;
+  border-radius: 1rem;
+  font-size: 16px;
+  background-color: #0e0e0e91;
+  padding: 1rem;
+  color: white;
+  outline: none;
+  backdrop-filter: blur(5px);
 }
 
-
-
 @-moz-document url-prefix() {
-  .headlinkContainer{
+  .headlinkContainer {
     background-color: #0e0e0e;
   }
-}  
+}
 
 @media screen and (max-width: 640px) {
   .form {
@@ -370,8 +373,12 @@ background-color: rgb(19, 19, 19);
 
   .total-container {
     overflow-x: hidden;
+    backdrop-filter: none;
   }
 
+  table#data-table {
+    min-width: 0;
+  }
 }
 
 @media screen and (max-width: 400px) {
