@@ -3,7 +3,7 @@
     <title>Kadena Balance Checker</title>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/BalanceStyle.css">
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../img/favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/pact-lang-api@4.1.2/pact-lang-api-global.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -179,6 +179,8 @@
         attachCell("th", "Chain ID", "chain-header", "chainId-header");
         attachCell("th", "Guard", "chain-header", "guard-header");
         attachCell("th", "Balance", "chain-header", "balance-header");
+        const acctNameUrl = document.getElementById('account').value;
+        history.replaceState(null, null, `?account=${acctNameUrl}`);
         const acctName = JSON.stringify(document.getElementById('account').value);
         chainIds.forEach(id => {
           attachCell("tr", "", "balance-data", `chain-${id}`)
@@ -236,6 +238,28 @@
           menuD.style.display = "none";
         }
       }
+
+      window.onload = function() {
+        try {
+          var url_string = (window.location.href);
+          var url = new URL(url_string);
+          var urlAddress = url.searchParams.get("account");
+          localStorage.setItem(urlAddress, document.getElementById('account').value);
+          document.getElementById('account').value = urlAddress;
+          if (urlAddress != null) {
+            document.getElementById('balance').click() 
+          }
+        } catch (err) {
+          console.log("Issues with Parsing URL Parameter's - " + err);
+        }
+      }
+
+      function copy() {
+        navigator.clipboard.writeText(window.location.href);
+        document.getElementById("mlink").textContent="Link Copied";
+        setTimeout(() => {document.getElementById("mlink").textContent="Share ";}, 3000);
+      }
+
   </script>
 </head>
 <body>
@@ -258,7 +282,7 @@
             </span>
           </div>
           <span id="menuDiv" class="headlinkContainer" style="display: none;">
-            <a class="headlinkSite" href="balance-checker.html">
+            <a class="headlinkSite" href="cross-chain.html">
               <div>Coin Transfer</div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
             </a>
@@ -300,7 +324,7 @@
             <div id="account-field" class="field">
               <label>Your Account Name</label>
               <input type="text" id="account" placeholder="Enter Account Name or Public Key" 
-              onkeydown = "if (event.keyCode == 13) document.getElementById('balance').click()">
+              onkeydown = "if (event.keyCode == 13) document.getElementById('balance').click()"  value="urlAddress">
               <div class="info-text">Account name is at least 3 characters</div>
             </div>
           </form>
@@ -317,6 +341,12 @@
               <div class="break">
                 <span class="info-text">Account Name</span>
                 <span id="accname"></span>
+                <span class="share-text">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span id="mlink"  onclick="copy()">Share</span>
+                </span>
+
+                
               </div>
               <div class="break">
                 <span class="info-text">Total Balance</span>
