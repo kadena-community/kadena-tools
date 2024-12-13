@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/pact-lang-api@4.1.2/pact-lang-api-global.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/CrossChainStyle.css">
-
+    
     <script>
       function download(data, filename, type) {
         var file = new Blob([data], {type: type});
@@ -55,23 +55,37 @@
     <div id="main">
       <!-- <img class="graph" src="img/graph.png" alt="graph"> -->
 
+      <script>
+        (function() {
+          var currentDate = new Date();
+          var targetDate = new Date('2025-01-31T23:59:59');
+          if (currentDate > targetDate) {
+            window.location.href = "https://tools.kadena.io";
+          }
+        })();
+      </script>
+
       <div class="nav">
         <h1>Kadena Coin Transfer</h1>
-        <p>NOTICE: This website is deprecated in favor of <a href="https://tools.kadena.io">tools.kadena.io</a></p>
         <div class="container">
           <!--<div id="subhead">
              <a class="headlink" href="cross-chain.html" >Cross Chain Transfer</span>
             <span class="headlink current" >Coin Transfer</span> 
           </div>-->
         </div>
+
         <div class="container-right">
+
           <div id="subhead" class="subheadButton">
             <span class="headlink" onclick="simpleToggle()">
               <div>Menu</div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
             </span>
           </div>
+
           <span id="menuDiv" class="headlinkContainer" style="display: none;">
+
+
             <a class="headlinkSite" href="docs/transfer-create.html">
               <div>Coin Transfer</div>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
@@ -96,8 +110,13 @@
         </div>
       </div>
 
-      <div class="container">
+      <div>
+        <p>NOTICE: This website is deprecated in favor of <a href="https://tools.kadena.io">tools.kadena.io</a></p>
+        <p>The website will go offline at January 31st, 2025</p>
+        <p>Issues can be reported at <a href="https://github.com/kadena-community/kadena.js/issues/new/choose">github.com/kadena-community/kadena.js</a></p>
+      </div>
 
+      <div class="container">
           <div class="container">
             <a href="docs/transfer-create.html">
               <button id="submit-button" class="button">
