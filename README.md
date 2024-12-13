@@ -1,3 +1,8 @@
+> [!IMPORTANT]  
+> This repository is no longer maintained. Please use https://tools.kadena.io
+> If you have any issues, report them at https://github.com/kadena-community/kadena.js/issues/new/choose
+
+
 # kadena-tools
 
 A collection of various tools for interacting with the
